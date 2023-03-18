@@ -27,7 +27,6 @@ var snowStorm = (function(window, document) {
   this.vMaxY = 4;                
   this.zIndex = 0;              
 
-// Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
 
   var s = this, storm = this, i,
   isIE = navigator.userAgent.match(/msie/i),
@@ -70,16 +69,16 @@ var snowStorm = (function(window, document) {
     function getArgs(oArgs) {
       var args = slice.call(oArgs), len = args.length;
       if (old) {
-        args[1] = 'on' + args[1]; // prefix
+        args[1] = 'on' + args[1];
         if (len > 3) {
-          args.pop(); // no capture
+          args.pop();
         }
       } else if (len === 3) {
         args.push(false);
       }
       return args;
     }
-// Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
     function apply(args, sType) {
       var element = args.shift(),
           method = [evt[sType]];
@@ -143,7 +142,7 @@ var snowStorm = (function(window, document) {
       }
     }
   };
-// Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
   this.resizeHandler = function() {
     if (window.innerWidth || window.innerHeight) {
       screenX = window.innerWidth-16-s.flakeRightOffset;
@@ -172,7 +171,7 @@ var snowStorm = (function(window, document) {
       clearInterval(s.timers[i]);
     }
   };
-// Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
   this.resume = function() {
     if (s.disabled) {
        s.disabled = 0;
@@ -215,7 +214,7 @@ var snowStorm = (function(window, document) {
       }
     }
   };
-// Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
   this.show = function() {
     var i;
     for (i=this.flakes.length; i--;) {
@@ -274,7 +273,7 @@ var snowStorm = (function(window, document) {
         s.o.style.display = 'block';
       }
     };
-// Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
     this.vCheck = function() {
       if (s.vX>=0 && s.vX<0.2) {
         s.vX = 0.2;
@@ -324,7 +323,7 @@ var snowStorm = (function(window, document) {
         }
       }
     };
-// Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
     this.animate = function() {
      
      
@@ -384,7 +383,7 @@ var snowStorm = (function(window, document) {
     this.refresh();
 
   };
-// Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
   this.snow = function() {
     var active = 0, used = 0, waiting = 0, flake = null, i;
     for (i=s.flakes.length; i--;) {
@@ -462,7 +461,7 @@ var snowStorm = (function(window, document) {
     s.animationInterval = Math.max(20,s.animationInterval);
     s.timerInit();
   };
-// Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
   this.start = function(bFromOnLoad) {
     if (!didInit) {
       didInit = true;
@@ -491,7 +490,7 @@ var snowStorm = (function(window, document) {
       s.active = true;
     }
   };
-// Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
   function doDelayedStart() {
     window.setTimeout(function() {
       s.start(true);
@@ -508,7 +507,6 @@ var snowStorm = (function(window, document) {
         doDelayedStart();
       }
     }
-   // Bu bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
     s.events.remove(window, 'load', doStart);
   }
 
